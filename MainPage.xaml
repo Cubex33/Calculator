@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyMauiApp.MainPage"
+             Shell.NavBarIsVisible="False">
+
+    <Grid RowDefinitions="Auto, *" RowSpacing="15" Padding="20" BackgroundColor="{StaticResource AppBackgroundColor}">
+        <!-- Display -->
+        <Frame Grid.Row="0" 
+               Padding="20" 
+               BackgroundColor="{StaticResource AppBackgroundColor}"
+               CornerRadius="10"
+               HeightRequest="120">
+                <Label x:Name="Label" 
+                       Text="0" 
+                       FontSize="48"
+                       HorizontalTextAlignment="End"
+                       VerticalTextAlignment="Center"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="Center"
+                       TextColor="{StaticResource TextColor}"
+                       LineBreakMode="HeadTruncation"/>
+                
+        </Frame>
+
+        <!-- Calculator buttons -->
+        <Grid Grid.Row="1" 
+              RowDefinitions="*, *, *, *, *" 
+              ColumnDefinitions="*, *, *, *" 
+              RowSpacing="10" 
+              ColumnSpacing="10"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+            
+            <!-- First row -->
+            <Button Grid.Row="0" Grid.Column="0" 
+                    Text="C" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnClearClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="0" Grid.Column="1" 
+                    Text="⌫" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnBackspaceClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="0" Grid.Column="2" 
+                    Text="±" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnSignClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="0" Grid.Column="3" 
+                    Text="/" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnOperatorClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            
+            <!-- Second row -->
+            <Button Grid.Row="1" Grid.Column="0" 
+                    Text="7" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="1" Grid.Column="1" 
+                    Text="8" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="1" Grid.Column="2" 
+                    Text="9" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="1" Grid.Column="3" 
+                    Text="×" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnOperatorClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            
+            <!-- Third row -->
+            <Button Grid.Row="2" Grid.Column="0" 
+                    Text="4" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="2" Grid.Column="1" 
+                    Text="5" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="2" Grid.Column="2" 
+                    Text="6" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="2" Grid.Column="3" 
+                    Text="-" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnOperatorClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            
+            <!-- Fourth row -->
+            <Button Grid.Row="3" Grid.Column="0" 
+                    Text="1" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="3" Grid.Column="1" 
+                    Text="2" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="3" Grid.Column="2" 
+                    Text="3" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="3" Grid.Column="3" 
+                    Text="+" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnOperatorClicked"
+                    BackgroundColor="{StaticResource OperationTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            
+            <!-- Fifth row -->
+            <Button Grid.Row="4" Grid.Column="0" 
+                    Grid.ColumnSpan="2" 
+                    Text="0" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDigitClicked"
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="4" Grid.Column="2" 
+                    Text="." 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnDecimalClicked" 
+                    BackgroundColor="{StaticResource NumberButtonColor}"
+                    TextColor="{StaticResource TextColor}"/>
+            <Button Grid.Row="4" Grid.Column="3" 
+                    Text="=" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Clicked="OnEqualsClicked"
+                    BackgroundColor="{StaticResource EquareTextColor}"
+                    TextColor="{StaticResource TextColor}"/>
+        </Grid>
+    </Grid>
+
+
+</ContentPage>

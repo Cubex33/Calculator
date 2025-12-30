@@ -1,0 +1,63 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MyMauiApp"
+             x:Class="MyMauiApp.App">
+<Application.Resources>
+        <Color x:Key="OperationTextColor">#343136</Color>
+        <Color x:Key="NumberTextColor">#3d393e</Color>
+        <Color x:Key="EquareTextColor">#dd765d</Color>
+        <Color x:Key="AppBackgroundColor">#231e24</Color>
+        <Color x:Key="Gray200">#000</Color> 
+        <Color x:Key="TextColor">#fff</Color>
+        <Color x:Key="PageBackgroundColor">#000000</Color>
+        <Color x:Key="DisplayBackgroundColor">#1C1C1C</Color>
+        <Color x:Key="DisplayTextColor">#FFFFFF</Color>
+        <Color x:Key="ButtonGridColor">#000000</Color>
+        
+        <Color x:Key="NumberButtonColor">#505050</Color>
+        <Color x:Key="NumberButtonTextColor">#FFFFFF</Color>
+        
+        <Color x:Key="FunctionButtonColor">#D4D4D2</Color>
+        <Color x:Key="FunctionButtonTextColor">#000000</Color>
+        
+        <Color x:Key="OperatorButtonColor">#FF9500</Color>
+        <Color x:Key="OperatorButtonTextColor">#FFFFFF</Color>
+        
+        <Color x:Key="EqualsButtonColor">#FF9500</Color>
+        <Color x:Key="EqualsButtonTextColor">#FFFFFF</Color>
+        
+        <Style TargetType="Button" x:Key="BaseButtonStyle">
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="CornerRadius" Value="0"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="BorderWidth" Value="0"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="NumberButtonStyle" BasedOn="{StaticResource BaseButtonStyle}">
+            <Setter Property="BackgroundColor" Value="{StaticResource NumberButtonColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource NumberButtonTextColor}"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="FunctionButtonStyle" BasedOn="{StaticResource BaseButtonStyle}">
+            <Setter Property="BackgroundColor" Value="{StaticResource FunctionButtonColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource FunctionButtonTextColor}"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="OperatorButtonStyle" BasedOn="{StaticResource BaseButtonStyle}">
+            <Setter Property="BackgroundColor" Value="{StaticResource OperatorButtonColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource OperatorButtonTextColor}"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="EqualsButtonStyle" BasedOn="{StaticResource BaseButtonStyle}">
+            <Setter Property="BackgroundColor" Value="{StaticResource EqualsButtonColor}"/>
+            <Setter Property="TextColor" Value="{StaticResource EqualsButtonTextColor}"/>
+        </Style>
+        
+        <Style TargetType="Button" x:Key="OperatorPressedStyle">
+            <Setter Property="BackgroundColor" Value="#FFFFFF"/>
+            <Setter Property="TextColor" Value="#FF9500"/>
+        </Style>
+    </Application.Resources>
+</Application>
